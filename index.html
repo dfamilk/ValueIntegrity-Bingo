@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="css\style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/1.4.0/js/ngDialog.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/lgu7qnq.css">
+    <script src="js\game.js"></script>
+
+</head>
+
+<body ng-app="bingoGameApp" 
+    ng-controller="bingoGameController"
+    ng-init="init()">
+    <div class="gameContainer">
+        
+        <div class="highlightBox"></div>
+
+        <div class="logo"><img src="img/DFA_ValueIntegrity.svg" alt="DFA Value Integrity Logo"></div>
+        <div class="DFA_DripSeal"><img src="img/DFA_DripSeal.svg" alt="DFA Value Integrity Seal"></div>
+        <div class="mobile">
+            Please use a non-mobile device to play the game. Thank you.
+        </div>
+        <div class="nonMobile">
+
+        
+            <!-- <h2>How to play:</h2>
+            <div class="rules">
+                Click and mark the correct answer to each question. When you get five blocks horizontally, vertically, or diagonally, you win. Good luck!
+            </div> -->
+            
+            <div class="game">
+                <div class="board">
+                    <div class="box" ng-class="[{'blockedBox': a.isBoxBlocked},{'correctAnswer': a.isCorrect},{'gameOverCorrectAnswer': (isGameOver && a.isPartOfWinningRow)}]" 
+                        ng-repeat="a in answers" ng-click="clickAnswer(a)">
+                        {{a.label}}
+                    </div>
+                </div>
+                <div class="list">
+                    <h2>Questions:</h2>
+                    <hr/>
+                    <br ng-show="currentQuestionIndex != 0" />
+                    <div class="question" ng-class="{'activeQuestion': $index === currentQuestionIndex}" ng-repeat="q in questions">        
+                        <div>{{($index + 1) + ') ' + q.text}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="wrongAnswerModalTemplate">
+        <div class="modalContainer">
+            <h3 class="modalHeader">Incorrect</h3>
+            <div class="modalText">
+                Please try again
+            </div>
+            <button type="button" class="modalButton modalOkButton" ng-click="closeModal()">
+                OK
+            </button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="gameOverModalTemplate">
+        <div class="modalContainer">
+            <h3 class="modalHeader">You won the game!</h3>
+            <div class="modalText">
+                Submit your email for a chance to win a prize from HR. Thank you for participating in Value Integrity Week.
+            </div>
+            <input type="text" placeholder="Email" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.userEmail" />
+            <button type="button" class="modalButton" ng-class="{'modalDisabled': isSavingEmail}" ng-click="submitEmail()">
+                <span ng-show="!isSavingEmail">Submit</span>
+                <img class="spinner" src="images/loader-line.svg" alt="Submitting" ng-show="isSavingEmail" />            
+            </button>
+            <div class="modalError">
+                {{modalData.errorMessage}}
+                <div ng-show="isEmailSubmitted && !modalData.userEmail && !modalData.errorMessage">
+                    Enter your DFA email address
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="saveSuccessModalTemplate">
+        <div class="modalContainer">
+            <h3 class="modalHeader">Email submitted</h3>
+            <div class="modalText">
+                Thanks for playing!
+                <div>
+                    <a class="link" href="https://theparlor.dfamilk.com">Go to The Parler</a>
+                </div>
+            </div>
+        </div>
+    </script>
+
+</body>
+
+</html>
