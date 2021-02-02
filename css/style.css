@@ -13,7 +13,8 @@ body {
     background: var(--DFA-barn-red);
     /* background: linear-gradient(140deg, rgba(163,12,51,1) 75%, rgba(238,49,36,1) 25% ); */
     height: 100vh;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
+	color: var(--DFA-milk-white);
 }
 
 .highlightBox{
@@ -76,8 +77,12 @@ hr {
 }
 
 .rules {
-	font-size: 20px;
+	font-size: 1em;
 	font-weight: 400;
+	font-family: "ff-good-web-pro", sans-serif;
+    font-weight: 700;
+	font-style: normal;
+	letter-spacing: 1px;
 }
 
 .game {
@@ -135,9 +140,10 @@ hr {
 }
 
 .box.gameOverCorrectAnswer {
-	background-color: var(--DFA-american-navy);
+	background-color: var(--DFA-visonary-blue);
 	color: white;
-	border: 2px solid var(--DFA-milk-white);
+	border: 6px solid var(--DFA-milk-white);
+	box-sizing: border-box;
 }
 
 .question {

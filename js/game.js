@@ -24,23 +24,23 @@
                 {id: 7, label: 'Trust'}, 
                 {id: 8, label: 'RaiseIt'}, 
                 {id: 9, label: 'Acceptable'}, 
-                {id: 10, label: 'Positive'},
-                {id: 11, label: 'Act', isPartOfWinningRow: true}, 
-                {id: 12, label: 'Honesty', isPartOfWinningRow: true}, 
-                {id: 13, label: 'Organization', isPartOfWinningRow: true}, 
+                {id: 10, label: 'Positive', isPartOfWinningRow: true },
+                {id: 11, label: 'Act'}, 
+                {id: 12, label: 'Honesty'}, 
+                {id: 13, label: 'Organization'}, 
                 {id: 14, label: 'Expected', isPartOfWinningRow: true}, 
-                {id: 15, label: 'Confident', isPartOfWinningRow: true},
+                {id: 15, label: 'Confident'},
                 {id: 16, label: 'Aware'}, 
                 {id: 17, label: 'Ethical'}, 
-                {id: 18, label: 'IT', isBoxBlocked: true}, 
+                {id: 18, label: 'IT', isBoxBlocked: true, isPartOfWinningRow: true }, 
                 {id: 19, label: 'Committed'}, 
                 {id: 20, label: 'Free'},
                 {id: 21, label: 'Mindful'}, 
-                {id: 22, label: 'Integrity'}, 
+                {id: 22, label: 'Integrity', isPartOfWinningRow: true }, 
                 {id: 23, label: 'RaiseIT@dfamilk.com'}, 
                 {id: 24, label: 'Safety'}, 
                 {id: 25, label: 'Dignity'},
-                {id: 26, label: 'Cooperative'}, 
+                {id: 26, label: 'Cooperative', isPartOfWinningRow: true }, 
                 {id: 27, label: 'Truth'}, 
                 {id: 28, label: 'Manangement'}, 
                 {id: 29, label: 'Fairly'}, 
@@ -61,8 +61,9 @@
                 {text: 'Employees are our most important assets and their ____________ and health is of primary concern.', answerId: 24, inWinningRow: true},
                 {text: 'Employees are ____________ to act in the best interest of the Cooperative at all times.', answerId: 14, inWinningRow: true},
                 {text: 'All individuals should be treated with respect and ____________.', answerId: 25, inWinningRow: true},
-                {text: 'We believe this begins with maintaining a ____________ and productive work environment, free from bullying, harassment and discrimination.', answerId: 10, inWinningRow: true},
-                {text: 'We do not tolerate bullying, harassment, or discrimination in the workplace, or in any other work-related settings, such as business trips or business-related ____________ ____________.', answerId: 30, inWinningRow: true}];
+                {text: 'We do not tolerate bullying, harassment, or discrimination in the workplace, or in any other work-related settings, such as business trips or business-related ____________ ____________.', answerId: 30, inWinningRow: true},
+                {text: 'We believe this begins with maintaining a ____________ and productive work environment, free from bullying, harassment and discrimination.', answerId: 10, inWinningRow: true}
+                ];
 
             // functions
             $scope.init = function() {
