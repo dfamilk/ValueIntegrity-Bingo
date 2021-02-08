@@ -1,18 +1,18 @@
 :root {
 	--DFA-visonary-blue: #41b6e6;
 	--DFA-american-navy: #002f6c;
-	--DFA-barn-red: #A30C33;
+	--DFA-barn-red: #a30c33;
 	--DFA-subtle-silver: #d9d9d9;
-    --DFA-milk-white: #ffffff;
-    --DFA-midnight-black: #000000;
-    --DFA-slate-grey: #262626;
+	--DFA-milk-white: #ffffff;
+	--DFA-midnight-black: #000000;
+	--DFA-slate-grey: #262626;
 }
 
 body {
-    font-family: Oswald, sans-serif;
-    background: var(--DFA-barn-red);
-    /* background: linear-gradient(140deg, rgba(163,12,51,1) 75%, rgba(238,49,36,1) 25% ); */
-    height: 100vh;
+	font-family: Oswald, sans-serif;
+	background: var(--DFA-barn-red);
+	/* background: linear-gradient(140deg, rgba(163,12,51,1) 75%, rgba(238,49,36,1) 25% ); */
+	height: 100vh;
 	background-repeat: no-repeat;
 	color: var(--DFA-milk-white);
 }
@@ -22,30 +22,30 @@ a:-webkit-any-link {
 	font-weight: bold;
 }
 
-.highlightBox{
-    position: absolute;
-    top:0;
-    background-color: #EE3124;
-    width: 300px;
-    height: 20px;
+.highlightBox {
+	position: absolute;
+	top: 0;
+	background-color: #ee3124;
+	width: 300px;
+	height: 20px;
 }
 
-.logo{
-    width: 75%;
-    padding-top: 50px;
+.logo {
+	width: 75%;
+	padding-top: 50px;
 }
 
-.list{
-    color: var(--DFA-milk-white);
+.list {
+	color: var(--DFA-milk-white);
 }
 
-.DFA_DripSeal img{
-    width: 450px;
-    position: fixed;
-    z-index: 1;
-    left: 700px;
-    top: 20px; 
-    display: none;
+.DFA_DripSeal img {
+	width: 450px;
+	position: fixed;
+	z-index: 1;
+	left: 700px;
+	top: 20px;
+	display: none;
 }
 
 hr {
@@ -55,10 +55,14 @@ hr {
 	background-color: #ffffff; /* Modern Browsers */
 }
 
-.mobile{
-    color: var(--DFA-milk-white);
-    padding-top: 25px;
-    letter-spacing: 1px;
+.mobile {
+	color: var(--DFA-milk-white);
+	padding-top: 25px;
+	letter-spacing: 1px;
+}
+
+.nonMobile {
+	max-width: 900px;
 }
 
 .gameContainer {
@@ -69,23 +73,23 @@ hr {
 @media (max-width: 1067px) {
 	.nonMobile {
 		display: none;
-    }
+	}
 }
 
 @media (min-width: 1068px) {
 	.mobile {
 		display: none;
-    }
-    .logo{
-        width: 500px;
-    }
+	}
+	.logo {
+		width: 500px;
+	}
 }
 
 .rules {
 	font-size: 1em;
 	font-weight: 400;
 	font-family: "ff-good-web-pro", sans-serif;
-    font-weight: 700;
+	font-weight: 700;
 	font-style: normal;
 	letter-spacing: 1px;
 }
@@ -101,11 +105,11 @@ hr {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(5, 1fr);
-    border: 2px solid var(--DFA-barn-red);
-    font-family: "ff-good-web-pro", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    padding-top: 30px;
+	border: 2px solid var(--DFA-barn-red);
+	font-family: "ff-good-web-pro", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	padding-top: 30px;
 }
 
 .box {
@@ -118,11 +122,11 @@ hr {
 	cursor: pointer;
 	color: var(--DFA-slate-grey);
 	padding: 0px 10px;
-    letter-spacing: .5px;
-    font-family: "ff-good-web-pro", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.35em;
+	letter-spacing: .5px;
+	font-family: "ff-good-web-pro", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 1.35em;
 }
 
 .box.blockedBox {
@@ -130,18 +134,18 @@ hr {
 	color: white;
 	font-size: 5em;
 	letter-spacing: 5px;
-    cursor: initial;
-    font-family: "ff-good-web-pro", sans-serif;
-    font-weight: 900;
-    font-style: normal;
+	cursor: initial;
+	font-family: "ff-good-web-pro", sans-serif;
+	font-weight: 900;
+	font-style: normal;
 }
 
 .box.correctAnswer {
 	background-color: var(--DFA-barn-red);
-    color:var(--DFA-milk-white);
-    border: solid 7px white;
-    box-sizing: border-box;
-    margin: 5px;
+	color: var(--DFA-milk-white);
+	border: solid 7px white;
+	box-sizing: border-box;
+	margin: 5px;
 }
 
 .box.gameOverCorrectAnswer {
@@ -154,11 +158,11 @@ hr {
 .question {
 	opacity: .25;
 	font-size: 18px;
-    margin-bottom: 10px;
-    font-family: "ff-good-web-pro", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    letter-spacing: 1px;
+	margin-bottom: 10px;
+	font-family: "ff-good-web-pro", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	letter-spacing: 1px;
 }
 
 .question.activeQuestion {
@@ -166,11 +170,11 @@ hr {
 	font-size: 22px;
 	font-weight: bold;
 	margin-top: 20px;
-    margin-bottom: 20px;
-    color: var(--DFA-milk-white);
-    font-family: "ff-good-web-pro", sans-serif;
-    font-weight: 600;
-    font-style: normal;
+	margin-bottom: 20px;
+	color: var(--DFA-milk-white);
+	font-family: "ff-good-web-pro", sans-serif;
+	font-weight: 600;
+	font-style: normal;
 }
 
 .modalContainer {
