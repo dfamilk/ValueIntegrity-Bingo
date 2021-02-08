@@ -17,6 +17,11 @@ body {
 	color: var(--DFA-milk-white);
 }
 
+a:-webkit-any-link {
+	color: var(--DFA-visonary-blue);
+	font-weight: bold;
+}
+
 .highlightBox{
     position: absolute;
     top:0;
