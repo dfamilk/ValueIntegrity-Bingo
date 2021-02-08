@@ -61,10 +61,6 @@ hr {
 	letter-spacing: 1px;
 }
 
-.nonMobile {
-	max-width: 900px;
-}
-
 .gameContainer {
 	margin: auto;
 	width: 75%;
