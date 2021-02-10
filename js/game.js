@@ -9,6 +9,8 @@
             $scope.isEmailSubmitted = false;
             $scope.isSavingEmail = false;
             $scope.modalData = {
+                firstName: '',
+                lastName: '',
                 userEmail: '',
                 errorMessage: ''
             };
@@ -121,7 +123,9 @@
             $scope.submitEmail = function () {
                 $scope.isEmailSubmitted = true;
 
-                if (!$scope.modalData.userEmail ||
+                if (!$scope.modalData.firstName ||
+                    !$scope.modalData.lastName ||
+                    !$scope.modalData.userEmail ||
                     $scope.isSavingEmail)
                     return;
 
@@ -140,6 +144,23 @@
                     closeByEscape: false,
                     scope: $scope
                 });
+            };
+
+            $scope.modalFeedbackDisplay = function() {
+                if (!$scope.isEmailSubmitted ||
+                    $scope.modalData.errorMessage)
+                    return null;
+
+                if (!$scope.modalData.firstName) 
+                    return 'Enter your first name';
+
+                if (!$scope.modalData.lastName)
+                    return 'Enter your last name';
+
+                if (!$scope.modalData.userEmail)
+                    return 'Enter your DFA email address';
+
+                return null;
             };
 
         });

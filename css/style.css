@@ -213,6 +213,7 @@ hr {
 	font-size: 18px;
 	width: 228px;
 	margin-right: 15px;
+	margin-bottom: 10px;
 	letter-spacing: .5px;
 	font-family: Oswald, sans-serif;
 }
@@ -220,8 +221,7 @@ hr {
 .modalError {
 	color: var(--DFA-barn-red);
 	font-size: 16px;
-	margin-top: 5px;
-	margin-left: 5px;
+	margin-left: 7px;
 }
 
 .modalDisabled {
@@ -236,28 +236,4 @@ hr {
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {
 	width: 350px;
-}
-
-.spinner {
-	width: 18px;
-	height: 18px;
-	-webkit-animation: spin 3s linear infinite;
-	-moz-animation: spin 3s linear infinite;
-	animation: spin 3s linear infinite;
-}
-@-moz-keyframes spin {
-	100% {
-		-moz-transform: rotate(360deg);
-	}
-}
-@-webkit-keyframes spin {
-	100% {
-		-webkit-transform: rotate(360deg);
-	}
-}
-@keyframes spin {
-	100% {
-		-webkit-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
 }

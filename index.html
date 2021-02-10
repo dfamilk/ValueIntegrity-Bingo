@@ -75,16 +75,15 @@
             <div class="modalText">
                 Submit your name and email for a chance to win a Value Integrity Week prize. Thank you for participating.
             </div>
+            <input id="firstName" type="text" placeholder="First name" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.firstName" />
+            <input type="text" placeholder="Last name" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.lastName" />
             <input type="text" placeholder="Email" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.userEmail" />
             <button type="button" class="modalButton" ng-class="{'modalDisabled': isSavingEmail}" ng-click="submitEmail()">
-                <span ng-show="!isSavingEmail">Submit</span>
-                <img class="spinner" src="images/loader-line.svg" alt="Submitting" ng-show="isSavingEmail" />            
+                Submit
             </button>
             <div class="modalError">
                 {{modalData.errorMessage}}
-                <div ng-show="isEmailSubmitted && !modalData.userEmail && !modalData.errorMessage">
-                    Enter your DFA email address
-                </div>
+                {{modalFeedbackDisplay()}}
             </div>
         </div>
     </script>
@@ -95,7 +94,7 @@
             <div class="modalText">
                 Thanks for playing!
                 <div>
-                    <a class="link" href="https://dfamilk.sharepoint.com/sites/EthicsandCompliance/">Go to The Parler</a>
+                    <a class="link" href="https://dfamilk.sharepoint.com/sites/EthicsandCompliance/">More information</a>
                 </div>
             </div>
         </div>
