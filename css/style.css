@@ -24,6 +24,10 @@ a:-webkit-any-link {
 	font-weight: bold;
 }
 
+*|*:visited {
+    color: var(--DFA-subtle-silver);
+}
+
 .highlightBox {
 	position: absolute;
 	top: 0;
