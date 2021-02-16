@@ -9,6 +9,8 @@
             $scope.isEmailSubmitted = false;
             $scope.isSavingEmail = false;
             $scope.modalData = {
+                firstName: '',
+                lastName: '',
                 userEmail: '',
                 errorMessage: ''
             };
@@ -37,7 +39,7 @@
                 {id: 20, label: 'Free'},
                 {id: 21, label: 'Mindful'}, 
                 {id: 22, label: 'Integrity', isPartOfWinningRow: true }, 
-                {id: 23, label: 'RaiseIt@dfamilk.com'}, 
+                {id: 23, label: 'RaiseIT@dfamilk.com'}, 
                 {id: 24, label: 'Safety'}, 
                 {id: 25, label: 'Dignity'},
                 {id: 26, label: 'Success', isPartOfWinningRow: true }, 
@@ -48,15 +50,15 @@
 
             $scope.questions = [
                 
-                {text: 'When using social media, exercise good judgment and ____________ according to policies and applicable laws.',  answerId: 11},
-                {text: 'Be ____________ that content you create on social media can potentially be viewed by a wide audience, while it is actively posted, and may be available for viewing even after the content has been deleted.', answerId: 16},
+                {text: 'Exercise good judgment and ____________ according to policies and applicable laws.',  answerId: 11},
+                {text: 'Be ____________ that content you create can potentially be viewed by a wide audience, while it is actively posted, and may be available for viewing even after the content has been deleted.', answerId: 16},
                 {text: 'The way we communicate online with our members, customers, and consumers is critical to our ____________. ', answerId: 26},
                 {text: '____________ is our core value.', answerId: 22},
                 {text: 'We have built an ____________ culture where our actions are consistent with our words, and our words are consistent with our intentions.', answerId: 17},
                 {text: 'We ____________ our employees will do the right thing, and our management and leadership teams will do the right thing when employees raise concerns.', answerId: 7},
-                {text: 'Report concerns to a supervisor or any member of ____________.', answerId: 28, inWinningRow: true},
-                {text: 'Report concerns to the Ethics and Compliance Department at ____________ or 1-833-852-2020.', answerId: 23, inWinningRow: true},
-                {text: "Report concerns to the Integrity Helpline at 1-855-____________(1-855-724-7348) or at www.dfamilk.ethicspoint.com, if employees wish to remain anonymous.", answerId: 8},
+                {text: 'Integrity helpline — report concerns to a supervisor or any member of ____________.', answerId: 28, inWinningRow: true},
+                {text: 'Integrity helpline — report concerns to the Ethics and Compliance Department at __________ or 1-833-852-2020.', answerId: 23, inWinningRow: true},
+                {text: "Integrity helpline — report concerns to 1-855-_________(1-855-724-7348) or at www.dfamilk.ethicspoint.com, if employees wish to remain anonymous.", answerId: 8},
                 {text: 'We never compromise our strong values, and we are ____________ to abiding by the laws designed to promote and preserve a competitive global market', answerId: 19},
                 {text: 'Employees are our most important assets and their ____________ and health is of primary concern.', answerId: 24, inWinningRow: true},
                 {text: 'Employees are ____________ to act in the best interest of the Cooperative at all times.', answerId: 14, inWinningRow: true},
@@ -121,7 +123,9 @@
             $scope.submitEmail = function () {
                 $scope.isEmailSubmitted = true;
 
-                if (!$scope.modalData.userEmail ||
+                if (!$scope.modalData.firstName ||
+                    !$scope.modalData.lastName ||
+                    !$scope.modalData.userEmail ||
                     $scope.isSavingEmail)
                     return;
 
@@ -140,6 +144,23 @@
                     closeByEscape: false,
                     scope: $scope
                 });
+            };
+
+            $scope.modalFeedbackDisplay = function() {
+                if (!$scope.isEmailSubmitted ||
+                    $scope.modalData.errorMessage)
+                    return null;
+
+                if (!$scope.modalData.firstName) 
+                    return 'Enter your first name';
+
+                if (!$scope.modalData.lastName)
+                    return 'Enter your last name';
+
+                if (!$scope.modalData.userEmail)
+                    return 'Enter your DFA email address';
+
+                return null;
             };
 
         });

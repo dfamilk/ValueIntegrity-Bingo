@@ -36,16 +36,6 @@
                 <p>Once you’ve won – across, horizontal or vertical – submit your name and email address for a chance to win prizes.</p>
                 
                 <p> <strong> Winners will be chosen at each location Friday, April 9, so make sure to complete the word bingo by 3 p.m. CST, Thursday, April 8.</strong></p>
-
-                <p>Use these helpful hints to get started: 
-                    <ul>
-                        <li>Refer to the social media for questions 1-3</li>
-                        <li>For questions 4-6, always act with integrity</li>
-                        <li>Know who to report concern to using the Integrity Helpline for questions 7-9</li>
-                        <li>For questions 10-12, stay safe and compete fairly</li>
-                        <li>Questions 13-15: Everyone should know bullying, harassment, and discrimination are not tolerated</li>
-                    </ul>
-                </p>
             </div>
 
             <div class="game">
@@ -85,16 +75,15 @@
             <div class="modalText">
                 Submit your name and email for a chance to win a Value Integrity Week prize. Thank you for participating.
             </div>
+            <input id="firstName" type="text" placeholder="First name" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.firstName" />
+            <input type="text" placeholder="Last name" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.lastName" />
             <input type="text" placeholder="Email" class="modalInput" ng-class="{'modalDisabled': isSavingEmail}" ng-model="modalData.userEmail" />
             <button type="button" class="modalButton" ng-class="{'modalDisabled': isSavingEmail}" ng-click="submitEmail()">
-                <span ng-show="!isSavingEmail">Submit</span>
-                <img class="spinner" src="images/loader-line.svg" alt="Submitting" ng-show="isSavingEmail" />            
+                Submit
             </button>
             <div class="modalError">
                 {{modalData.errorMessage}}
-                <div ng-show="isEmailSubmitted && !modalData.userEmail && !modalData.errorMessage">
-                    Enter your DFA email address
-                </div>
+                {{modalFeedbackDisplay()}}
             </div>
         </div>
     </script>
@@ -105,7 +94,7 @@
             <div class="modalText">
                 Thanks for playing!
                 <div>
-                    <a class="link" href="https://dfamilk.sharepoint.com/sites/EthicsandCompliance/">Go to The Parlor</a>
+                    <a class="link" href="https://dfamilk.sharepoint.com/sites/EthicsandCompliance/">More information</a>
                 </div>
             </div>
         </div>
