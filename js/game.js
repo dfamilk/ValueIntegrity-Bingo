@@ -44,7 +44,7 @@
                 {id: 25, label: 'Dignity'},
                 {id: 26, label: 'Success', isPartOfWinningRow: true }, 
                 {id: 27, label: 'Truth'}, 
-                {id: 28, label: 'Manangement'}, 
+                {id: 28, label: 'Management'}, 
                 {id: 29, label: 'Fairly'}, 
                 {id: 30, label: 'Social Events'}];
 
