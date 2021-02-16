@@ -39,7 +39,7 @@
                 {id: 20, label: 'Free'},
                 {id: 21, label: 'Mindful'}, 
                 {id: 22, label: 'Integrity', isPartOfWinningRow: true }, 
-                {id: 23, label: 'RaiseIT@dfamilk.com'}, 
+                {id: 23, label: 'RaiseIt@dfamilk.com'}, 
                 {id: 24, label: 'Safety'}, 
                 {id: 25, label: 'Dignity'},
                 {id: 26, label: 'Success', isPartOfWinningRow: true }, 
