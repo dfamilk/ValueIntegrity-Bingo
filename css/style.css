@@ -22,6 +22,10 @@ a:-webkit-any-link {
 	font-weight: bold;
 }
 
+.modalText a{
+	color: var(--DFA-barn-red);
+}
+
 .highlightBox {
 	position: absolute;
 	top: 0;
