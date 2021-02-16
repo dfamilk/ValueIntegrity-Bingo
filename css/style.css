@@ -24,6 +24,11 @@ a:-webkit-any-link {
 	font-weight: bold;
 }
 
+*|*:link {
+    color: var(--DFA-milk-white);
+	font-weight: bold;
+}
+
 *|*:visited {
     color: var(--DFA-subtle-silver);
 }
