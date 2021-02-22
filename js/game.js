@@ -50,8 +50,8 @@
 
             $scope.questions = [
                 
-                {text: ' When using social media, exercise good judgment and ____________ according to policies and applicable laws.',  answerId: 11},
-                {text: 'Be ____________ that content you create on social media can potentially be viewed by a wide audience, while it is actively posted, and may be available for viewing even after the content has been deleted.', answerId: 16},
+                {text: 'Exercise good judgment and ____________ according to policies and applicable laws.',  answerId: 11},
+                {text: 'Be ____________ that content you create can potentially be viewed by a wide audience, while it is actively posted, and may be available for viewing even after the content has been deleted.', answerId: 16},
                 {text: 'The way we communicate online with our members, customers, and consumers is critical to our ____________. ', answerId: 26},
                 {text: '____________ is our core value.', answerId: 22},
                 {text: 'We have built an ____________ culture where our actions are consistent with our words, and our words are consistent with our intentions.', answerId: 17},
