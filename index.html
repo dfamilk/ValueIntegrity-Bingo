@@ -15,8 +15,7 @@
 </head>
 
 <body ng-app="bingoGameApp" 
-    ng-controller="bingoGameController"
-    ng-init="init()">
+    ng-controller="bingoGameController">
     <div class="gameContainer">
         
         <div class="highlightBox"></div>
@@ -90,7 +89,10 @@
             <button type="button" class="modalButton" ng-class="{'modalDisabled': isSavingEmail}" ng-click="submitEmail()">
                 Submit
             </button>
-            <div class="modalError">
+            <div class="modalMessage" ng-show="isSavingEmail">
+                Submitting...
+            </div>
+            <div class="modalMessage modalError">
                 {{modalData.errorMessage}}
                 {{modalFeedbackDisplay()}}
             </div>
