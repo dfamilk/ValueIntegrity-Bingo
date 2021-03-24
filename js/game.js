@@ -1,7 +1,29 @@
+        var apiPath = 'https://dfaapi.dfamilk.com/api/TemporaryTasks/ValueIntegrityBingoParticipants';
+        var apiClientName = 'Solutions_Team_Prod';
+        var apiKey = '9d07b8c9739642b79f14d778a248199f';
 
         var bingoGameApp = angular.module('bingoGameApp', ['ngDialog']);
 
-        bingoGameApp.controller('bingoGameController', function($scope, $timeout, ngDialog) {
+        bingoGameApp.factory("bingoGameService",
+        ["$http",
+        function ($http) {    
+            var postSaveParticipant = function (data) {
+                var restConfig = {
+                    headers: {
+                        'Ocp-Apim-Subscription-Key': apiKey,
+                        'ClientName': apiClientName,
+                        'ClientUsername': 'Bingo: ' + data.firstName + ' ' + data.lastName,
+                    }
+                }
+                return $http.post(apiPath, data, restConfig);
+            }
+    
+            return {
+                postSaveParticipant: postSaveParticipant,
+            };    
+        }]);
+
+        bingoGameApp.controller('bingoGameController', function($scope, bingoGameService, $timeout, ngDialog) {
 
             // variables
             $scope.currentQuestionIndex = 0;
@@ -68,10 +90,6 @@
                 ];
 
             // functions
-            $scope.init = function() {
-                console.log('App started');
-            };
-            
             $scope.clickAnswer = function(answer){
                 if ($scope.isGameOver ||
                     !answer ||
@@ -129,10 +147,30 @@
                     $scope.isSavingEmail)
                     return;
 
-                $scope.isSavingEmail = true;
-                $timeout($scope.showSaveSuccessful, 1000);
+                $scope.callApiToSaveInfo();
             };
+    
+            $scope.callApiToSaveInfo = function() {
+                $scope.isSavingEmail = true;
+                
+                var requestBody = {
+                    firstName: $scope.modalData.firstName,
+                    lastName: $scope.modalData.lastName,
+                    email: $scope.modalData.userEmail
+                };
 
+                bingoGameService.postSaveParticipant(requestBody)
+                    .then(
+                        function (data) {
+                            $scope.showSaveSuccessful();
+                        },
+                        function (data) {
+                            console.log('Error calling postSaveParticipant', requestBody, data)
+                            $scope.modalData.errorMessage = 'An error occurred. Please try again later.';
+                            $scope.isSavingEmail = false;
+                        });
+            };
+    
             $scope.showSaveSuccessful = function() {
                 $scope.isSavingEmail = false;
                 $scope.closeModal();

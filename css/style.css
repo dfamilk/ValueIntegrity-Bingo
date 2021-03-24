@@ -222,10 +222,13 @@ hr {
 	font-family: Oswald, sans-serif;
 }
 
-.modalError {
-	color: var(--DFA-barn-red);
+.modalMessage {
 	font-size: 16px;
 	margin-left: 7px;
+}
+
+.modalError {
+	color: var(--DFA-barn-red);
 }
 
 .modalDisabled {
